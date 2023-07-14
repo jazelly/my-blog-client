@@ -9,6 +9,7 @@
 // import TheResources from './components/learning-resources/TheResources.vue';
 
 import StarBackground from './components/layouts/StarBackground.vue';
+
 export default {
   components: {
     StarBackground,

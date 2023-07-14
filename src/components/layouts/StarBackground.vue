@@ -17,7 +17,8 @@ body, html {
   width: 100%;
   height: 100%;
   display: flex;
-  background: #111;
+  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+  overflow: hidden;
 }
 
 .flashing-animation {
