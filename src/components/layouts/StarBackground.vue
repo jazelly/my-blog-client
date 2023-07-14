@@ -1,47 +1,51 @@
 <template>
-  <div class="starsky-layer1"></div>
-  <div class="starsky-layer2"></div>
-  <div class="starsky-layer3"></div>
-  <div class="starsky-layer4"></div>
-  <div class="starsky-layer5"></div>
-  <div class="starsky-layer6"></div>
-  <div class="starsky-layer7"></div>
-  <div class="starsky-layer8"></div>
-  <div class="starsky-layer9"></div>
-  <div class="starsky-layer10"></div>
-  <div class="title">JAZELLY</div>
+  <div class="bg-starsky">
+    <div class="starsky-layer1"></div>
+    <div class="starsky-layer2"></div>
+    <div class="starsky-layer3"></div>
+    <div class="starsky-layer4"></div>
+    <div class="starsky-layer5"></div>
+    <div class="starsky-layer6"></div>
+    <div class="starsky-layer7"></div>
+    <div class="starsky-layer8"></div>
+    <div class="starsky-layer9"></div>
+    <div class="starsky-layer10"></div>
+  </div>
 </template>
 
 <style lang="scss">
-body, html {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
-  overflow: hidden;
-}
-
-.flashing-animation {
-  animation: flashing 2s ease-in-out infinite;
-}
-@function getShadows($n) {
-  $shadows: '#{random(100)}vw #{random(100)}vh #fff';
-
-  @for $i from 2 through $n {
-    $shadows: '#{$shadows}, #{random(100)}vw #{random(100)}vh #fff';
+  .bg-starsky {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
   }
 
-  @return unquote($shadows);
-}
+  .flashing-animation {
+    animation: flashing 2s ease-in-out infinite;
+  }
+  @function getShadows($n) {
+    $shadows: '#{random(100)}vw #{random(100)}vh #fff';
 
-@function getAnimation($n, $duration) {
-  $animation: 'moveUp #{$duration / (11 - $n)} linear infinite';
-  @if $n >= 9 {
-    $animation: '#{$animation}, flashing 2s ease-in-out infinite';
+    @for $i from 2 through $n {
+      $shadows: '#{$shadows}, #{random(100)}vw #{random(100)}vh #fff';
+    }
+
+    @return unquote($shadows);
   }
 
-  @return unquote($animation);
-}
+  @function getAnimation($n, $duration) {
+    $animation: 'moveUp #{$duration / (11 - $n)} linear infinite';
+    @if $n >= 9 {
+      $animation: '#{$animation}, flashing 2s ease-in-out infinite';
+    }
+
+    @return unquote($animation);
+  }
 
   $duration: 400s;
   $count: 400;

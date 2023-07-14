@@ -1,14 +1,20 @@
-import { createApp } from 'vue';
+const { createApp } = require('vue');
+const VueRouter = require('vue-router');
 
-import App from './App.vue';
-import BaseCard from './components/UI/BaseCard.vue';
-import BaseButton from './components/UI/BaseButton.vue';
-import BaseDialog from './components/UI/BaseDialog.vue';
+import App from './App';
+import HomePage from './views/HomePage';
+
+const routes = [
+  { path: '/', component: HomePage },
+];
+
+const router = VueRouter.createRouter({
+  history: VueRouter.createWebHashHistory(),
+  routes,
+});
 
 const app = createApp(App);
-
-app.component('base-card', BaseCard);
-app.component('base-button', BaseButton);
-app.component('base-dialog', BaseDialog);
+app.use(router);
+app.use(HomePage);
 
 app.mount('#app');

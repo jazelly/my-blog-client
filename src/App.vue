@@ -1,20 +1,13 @@
 <template>
-    <StarBackground></StarBackground>
-    <!-- <the-header title="Jazelly"></the-header>
-    <the-resources></the-resources> -->
+    <HomePage></HomePage>
 </template>
 
 <script>
-// import TheHeader from './components/layouts/TheHeader.vue';
-// import TheResources from './components/learning-resources/TheResources.vue';
-
-import StarBackground from './components/layouts/StarBackground.vue';
+import HomePage from './views/HomePage';
 
 export default {
   components: {
-    StarBackground,
-    // TheHeader,
-    // TheResources,
+    HomePage,
   },
 };
 </script>
@@ -22,12 +15,22 @@ export default {
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-* {
-  box-sizing: border-box;
-}
-
-/* .bg-wrapper {
+body, html {
   width: 100%;
   height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* * {
+  box-sizing: border-box;
 } */
 </style>
